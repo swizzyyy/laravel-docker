@@ -36,5 +36,8 @@ COPY . /var/www
 COPY --chown=www:www . /var/www
 RUN chown -R www-data:www-data /var/www
 
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 ENV PORT=8000
 ENTRYPOINT [ "docker/entrypoint.sh" ]
