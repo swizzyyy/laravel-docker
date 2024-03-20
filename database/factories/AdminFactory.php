@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UserFactory extends Factory
+class AdminFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +18,10 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'admin',
+            'first_name' => 'admin',
+            'last_name' => 'admin',
+            'email' => 'admin@example.com',
             'password' => '$2y$10$kej7aWuPtPNdNVc/qpvGTuxHTzD17AIKDvd2XDZraoz9JCgqrUXtu', // qwer1234
-            'remember_token' => Str::random(10),
         ];
     }
 

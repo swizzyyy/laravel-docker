@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable implements JWTSubject
+class Player extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -19,8 +19,9 @@ class User extends Authenticatable implements JWTSubject
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'username',
+        'first_name',
+        'last_name',
+        'email',
         'password',
     ];
 
@@ -53,10 +54,6 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
-    public function product()
-    {
-        return $this->hasMany(Product::class,'user_id', 'id');
-    }
 
 
 }
