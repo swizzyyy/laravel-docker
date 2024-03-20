@@ -21,7 +21,7 @@ fi
 if [ "$role" = "app" ]; then
     php artisan key:generate
     php artisan optimize:clear
-    php artisan migrate:fresh --seed
+    php artisan wait_db && php artisan migrate:fresh --seed
     php artisan serve --port=$PORT --host=0.0.0.0 --env=.env
     exec docker-php-entrypoint "$@"
 fi
