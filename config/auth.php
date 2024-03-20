@@ -38,7 +38,7 @@ return [
     'guards' => [
         'api' => [
             'driver' => 'jwt',
-            'provider' => 'users',
+            'provider' => 'admin',
             'hash' => false,
         ],
     ],
@@ -65,11 +65,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'player' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Player::class,
+        ]
     ],
 
     /*
