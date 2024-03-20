@@ -16,6 +16,7 @@ services:
       - APP_ENV=${APP_ENV}
       - CONTAINER_ROLE=app
       - JWT_SECRET=${JWT_SECRET}
+      - APP_KEY=${APP_KEY}
     ports:
       - 8000:8000
     depends_on:

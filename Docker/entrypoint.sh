@@ -18,8 +18,11 @@ if [ ! $JWT_SECRET ]; then
     php artisan jwt:secret
 fi
 
-if [ "$role" = "app" ]; then
+if [ ! $APP_KEY ]; then
     php artisan key:generate
+fi
+
+if [ "$role" = "app" ]; then
     php artisan optimize:clear
     php artisan wait_db && php artisan migrate:fresh --seed
     php artisan serve --port=$PORT --host=0.0.0.0 --env=.env
