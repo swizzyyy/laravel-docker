@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\ProductController;
-use App\Http\Controllers\Api\ProductsResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\PrizeController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Route::post('/login', 'AuthController@login');
-Route::post('/auth/token',[AuthController::class,'login'])->name('login');
+Route::post('/auth/token/admin',[AuthController::class,'adminLogin']);
+Route::post('/auth/token/player',[AuthController::class,'playerLogin']);
 
-Route::middleware(['auth:api'])->group(function () {
-    Route::apiResource('product', ProductsResource::class);
-    Route::post('/product/availability', [ProductController::class,'checkAvailability']);
-    Route::post('/product/suitability', [ProductController::class,'checkSuitability']);
+Route::middleware(['auth'])->group(function () {
+    Route::post('prizes', [PrizeController::class, 'create']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
