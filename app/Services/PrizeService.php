@@ -2,7 +2,6 @@
 namespace App\Services;
 
 use App\Models\Prize;
-use Illuminate\Support\Facades\Log;
 
 class PrizeService
 {
@@ -13,22 +12,14 @@ class PrizeService
 
     public function create($request)
     {
-        $prize = new Prize();
-
-        $prize->name = $request['name'];
-        $prize->type = $request['type'];
-
-        if($prize->save())
-        {
-            return $prize;
-        }
+        return Prize::create($request);
     }
 
     /**
      * Prize Update
     */
 
-    public function update($product,$request)
+    public function update($request)
     {
 
     }
