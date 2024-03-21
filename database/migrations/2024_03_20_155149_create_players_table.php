@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('lang');
             $table->string('email')->unique();
-            $table->unsignedBigInteger('rank_id');
+            $table->unsignedBigInteger('rank_id')->nullable();
             $table->foreign('rank_id')->references('id')->on('ranks');
             $table->string('password');
             $table->decimal('balance', 10, 4)->default(0);
