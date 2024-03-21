@@ -10,6 +10,8 @@ class AuthController extends Controller
 {
     public function adminLogin(Request $request)
     {
+        Auth::setDefaultDriver('admin');
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::guard('admin')->attempt($credentials)) {
