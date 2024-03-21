@@ -30,10 +30,11 @@ class DatabaseSeeder extends Seeder
         ];
 
         DB::table('ranks')->insert($ranks);
-        Redis::set('rank',1);
 
         \App\Models\Player::factory()->count(10)->create();
 
         \App\Models\Admin::factory()->create();
+
+        \App\Models\Prize::factory()->create();
     }
 }

@@ -11,7 +11,8 @@ return new class extends Migration
         Schema::create('prizes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('type'); // custom_prize or lottery
+            $table->string('type');
+            $table->bigInteger('amount');
             $table->timestamps();
         });
     }

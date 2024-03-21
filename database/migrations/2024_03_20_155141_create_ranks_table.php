@@ -11,6 +11,8 @@ return new class extends Migration
         Schema::create('ranks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->unsignedBigInteger('rank_category_id');
+            $table->foreign('rank_category_id')->references('id')->on('rank_categories');
             $table->timestamps();
         });
     }
