@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreatePrizeValidation;
+use App\Http\Resources\PrizeResource;
 use App\Services\PrizeService;
 use Illuminate\Http\JsonResponse;
 
@@ -17,10 +18,10 @@ class PrizeController extends Controller
             $this->prizeService = $prizeService;
     }
 
-    public function create(CreatePrizeValidation $request): JsonResponse
+    public function create(CreatePrizeValidation $request): PrizeResource
     {
         $prize = $this->prizeService->create($request);
 
-        return response()->json(['message' => 'Prize created successfully', 'data' => $prize], 201);
+        return PrizeResource::make($prize);
     }
 }
