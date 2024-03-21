@@ -35,6 +35,8 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Admin::factory()->create();
 
-        \App\Models\Prize::factory()->create();
+        \App\Models\Prize::factory()->count(5)->create();
+
+        \App\Models\RankCategory::factory()->count(5)->create();
     }
 }

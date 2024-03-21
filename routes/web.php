@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Rank;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    dd(User::all());
-    // dd(bcrypt("qwer1234"));
+    dd(Rank::all());
 
 });

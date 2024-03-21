@@ -25,7 +25,7 @@ class PlayerFactory extends Factory
             'rank_id' => $this->faker->randomElement(\App\Models\Rank::pluck('id')->toArray()),
             'gender' => $this->faker->randomElement(['male', 'female']),
             'lang' => 'en',
-            'password' => bcrypt($this->faker->name()),
+            'password' => bcrypt('password'),
             'is_blocked' => $this->faker->boolean(),
             'created_at' => now(),
             'updated_at' => now(),
