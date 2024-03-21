@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         DB::table('ranks')->insert($ranks);
+        Redis::set('rank',1);
 
         \App\Models\Player::factory()->count(10)->create();
 
