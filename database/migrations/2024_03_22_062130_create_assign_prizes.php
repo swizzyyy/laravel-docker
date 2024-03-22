@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('prize_id')->nullable();
             $table->foreign('prize_id')->references('id')->on('prizes');
             $table->integer('amount');
-            $table->integer('odds_of_winning');
+            $table->integer('odds_of_winning')->default(0);
             $table->timestamps();
         });
     }
