@@ -12,6 +12,7 @@
 
 <h3>Endpoints for admin</h3>
 
+<h4>Headers: Accept: application/json; Content-Type: application/json; Authentication Bearer</h4>
 
 <h4>Prizes</h4>
     <ul>
