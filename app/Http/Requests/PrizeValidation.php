@@ -23,9 +23,8 @@ class PrizeValidation extends FormRequest
     {
         return [
             'name' => 'nullable|string',
-            'type' => 'required|in:custom_prize,lottery_ticket',
-            'amount' => 'nullable|numeric'
-        ];
+            'type' => 'required|in:custom_prize,lottery_ticket'
+            ];
     }
     public function messages(): array
     {

@@ -10,5 +10,5 @@ class Prize extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','type','amount'];
+    protected $fillable = ['name','type'];
 }
