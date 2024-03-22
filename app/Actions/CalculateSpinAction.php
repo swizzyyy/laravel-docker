@@ -1,7 +1,7 @@
 <?php
 namespace App\Actions;
 
-use App\Models\Player;
+use Carbon\Carbon;
 use App\Models\Setting;
 
 class CalculateSpinAction
@@ -13,6 +13,8 @@ class CalculateSpinAction
         }
 
         $spinCoolDown = Setting::first()->cooldown_hour;
+
+        $lastSpinTime = Carbon::parse($lastSpinTime);
 
         $allowedSpinTime = $lastSpinTime->addHours($spinCoolDown);
 
