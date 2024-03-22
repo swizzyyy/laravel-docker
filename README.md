@@ -17,7 +17,7 @@
 <h4>Prizes</h4>
     <ul>
 <li>/api/prize - GET Method returns all Prizes (Cached in Redis)</li>
-<li>/api/prize - POST Method Create Prize {"name": "Test prize", "type": custom_prize|lottery_ticket, "amount": 10000} - Returns Created Record</li>
+<li>/api/prize - POST Method Create Prize {"name": "Test prize", "type": custom_prize|lottery_ticket} - Returns Created Record</li>
 <li>/api/prize/{prizeID} - PUT Method Update The Prize</li>
   </ul>
 <h4>Ranks</h4>
