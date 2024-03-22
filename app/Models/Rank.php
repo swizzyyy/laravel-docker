@@ -9,5 +9,5 @@ class Rank extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name','rank_category_id'];
 }

@@ -14,22 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $ranks = [
-            ['name' => 'Rank 1'],
-            ['name' => 'Rank 2'],
-            ['name' => 'Rank 3'],
-            ['name' => 'Rank 4'],
-            ['name' => 'Rank 5'],
-            ['name' => 'Rank 6'],
-            ['name' => 'Rank 7'],
-            ['name' => 'Rank 8'],
-            ['name' => 'Rank 9'],
-            ['name' => 'Rank 10'],
-            ['name' => 'Rank 11'],
-            ['name' => 'Rank 12'],
-        ];
-
-        DB::table('ranks')->insert($ranks);
+        \App\Models\Rank::factory()->count(12)->create();
 
         \App\Models\Player::factory()->count(10)->create();
 

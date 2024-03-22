@@ -1,10 +1,12 @@
+
+
 <?php
 
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePrizeValidation extends FormRequest
+class RankValidation extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,14 +25,14 @@ class CreatePrizeValidation extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'type' => 'required|in:custom_prize,lottery_ticket'
+            'rank_category_id' => 'nullable'
         ];
     }
     public function messages(): array
     {
         return [
             'required' => ':attribute Required!',
-            'string' => ':attribute Must be a string!'
+            'string' => ':attribute Must be a string!',
         ];
     }
 

@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PrizeResource extends JsonResource
+class RankResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +16,7 @@ class PrizeResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'type' => $this->type,
-            'amount' => $this->amount,
+            'rank_category_id' => $this->rank_category_id,
             'id' => $this->id
         ];
     }

@@ -20,7 +20,7 @@ Route::post('/auth/token/admin',[AuthController::class,'adminLogin']);
 Route::post('/auth/token/player',[AuthController::class,'playerLogin']);
 
 Route::middleware(['auth'])->group(function () {
-    Route::post('prizes', [PrizeController::class, 'create']);
+    Route::resource('prize', PrizeController::class);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
