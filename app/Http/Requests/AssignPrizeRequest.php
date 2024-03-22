@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RankCategoryValidation extends FormRequest
+class AssignPrizeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,14 +22,13 @@ class RankCategoryValidation extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'nullable|string'
+            'rank_category_id' => 'numeric',
+            'amount' => 'numeric'
         ];
     }
     public function messages(): array
     {
         return [
-            'required' => ':attribute Required!',
-            'string' => ':attribute Must be a string!',
             'numeric' => ':attribute Must be a number!',
         ];
     }

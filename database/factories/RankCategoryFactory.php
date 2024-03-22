@@ -18,7 +18,6 @@ class RankCategoryFactory extends Factory
     {
         return [
                 'name' => $this->faker->name(),
-                'prize_id' => $this->faker->randomElement(\App\Models\Prize::pluck('id')->toArray()),
                 'created_at' => now(),
                 'updated_at' => now(),
             ];

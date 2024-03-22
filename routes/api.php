@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\AssignPrizeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\PrizeController;
@@ -27,6 +28,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('rank', RankController::class);
     Route::resource('rankCategories', RankCategoryController::class);
     Route::get('/players',[PlayerController::class,'index']);
+    Route::post('/assignPrize',[AssignPrizeController::class,'assignPrize']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

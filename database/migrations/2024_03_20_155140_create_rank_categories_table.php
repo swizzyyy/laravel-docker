@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('rank_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('prize_id')->nullable();
-            $table->foreign('prize_id')->references('id')->on('prizes');
             $table->timestamps();
         });
     }

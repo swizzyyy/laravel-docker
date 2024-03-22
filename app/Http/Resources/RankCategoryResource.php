@@ -16,7 +16,6 @@ class RankCategoryResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'price_id' => $this->price_id,
             'id' => $this->id
         ];
     }

@@ -19,7 +19,7 @@ class RankCategoryController extends Controller
      */
      public function __construct()
     {
-            $this->rankCategoryService = new dataManipulcationService('rank_categories');
+            $this->rankCategoryService = new dataManipulcationService('RankCategory');
     }
 
     /**
@@ -43,10 +43,10 @@ class RankCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(RankCategoryValidation $request, RankCategory $prize): RankCategoryResource
+    public function update(RankCategoryValidation $request, RankCategory $rankCategory): RankCategoryResource
     {
-        $prize = $this->rankCategoryService->update($request->all(), $prize);
+        $rankCategory = $this->rankCategoryService->update($request->all(), $rankCategory);
 
-        return RankCategoryResource::make($prize);
+        return RankCategoryResource::make($rankCategory);
     }
 }
