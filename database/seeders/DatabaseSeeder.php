@@ -14,14 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Rank::factory()->count(12)->create();
-
-        \App\Models\Player::factory()->count(10)->create();
-
         \App\Models\Admin::factory()->create();
 
         \App\Models\Prize::factory()->count(5)->create();
 
         \App\Models\RankCategory::factory()->count(5)->create();
+
+        \App\Models\Rank::factory()->count(12)->create();
+
+        \App\Models\Player::factory()->count(10)->create();
+
     }
 }
