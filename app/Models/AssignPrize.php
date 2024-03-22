@@ -8,5 +8,5 @@ class AssignPrize extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['rank_category_id','amount'];
+    protected $fillable = ['rank_category_id','amount','odds_of_winning'];
 }

@@ -23,7 +23,8 @@ class AssignPrizeRequest extends FormRequest
     {
         return [
             'rank_category_id' => 'numeric',
-            'amount' => 'numeric'
+            'amount' => 'numeric',
+            'odds_of_winning' => 'nullable',
         ];
     }
     public function messages(): array

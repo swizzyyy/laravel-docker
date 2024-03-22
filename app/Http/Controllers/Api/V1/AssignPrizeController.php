@@ -15,7 +15,7 @@ class AssignPrizeController extends Controller
         $rank = $request->rank_category_id;
 
         $totalPrizes = 1000000;
-        $prizeOdds = $totalPrizes > 0 ? ($amount / $totalPrizes) * 100 : 0;
+        $prizeOdds = $amount / $totalPrizes * 100;
 
         $assign = AssignPrize::updateOrCreate(
             ['rank_category_id' => $rank],
