@@ -1,4 +1,4 @@
-<h2>Documentation of API<h2></h2>
+<h2>Documentation<h2></h2>
 <h3>Usage</h3>
 git clone https://github.com/swizzyyy/laravel-docker
 docker compose up -d --build
