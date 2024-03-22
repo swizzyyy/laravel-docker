@@ -18,7 +18,7 @@ class PrizeFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'type' => $this->faker->randomElement(['custom_prize','lottery']),
+            'type' => $this->faker->randomElement(['custom_prize','lottery_ticket']),
             'amount' => $this->faker->randomNumber(6,true),
             'created_at' => now(),
             'updated_at' => now(),

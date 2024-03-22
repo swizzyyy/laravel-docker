@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\PrizeController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\RankController;
 use App\Http\Controllers\Api\V1\PlayerController;
+use App\Http\Controllers\Api\V1\RankCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,10 @@ use App\Http\Controllers\Api\V1\PlayerController;
 Route::post('/auth/token/admin',[AuthController::class,'adminLogin']);
 Route::post('/auth/token/player',[AuthController::class,'playerLogin']);
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth:admin'])->group(function () {
     Route::resource('prize', PrizeController::class);
     Route::resource('rank', RankController::class);
+    Route::resource('rankCategories', RankCategoryController::class);
     Route::get('/players',[PlayerController::class,'index']);
 });
 
