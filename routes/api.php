@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\PrizeController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\RankController;
+use App\Http\Controllers\Api\V1\PlayerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::post('/auth/token/player',[AuthController::class,'playerLogin']);
 Route::middleware(['auth'])->group(function () {
     Route::resource('prize', PrizeController::class);
     Route::resource('rank', RankController::class);
+    Route::get('/players',[PlayerController::class,'index']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

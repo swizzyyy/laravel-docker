@@ -1,5 +1,3 @@
-
-
 <?php
 
 namespace App\Http\Requests;
@@ -24,14 +22,13 @@ class RankValidation extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
+            'name' => 'nullable|string',
             'rank_category_id' => 'nullable'
         ];
     }
     public function messages(): array
     {
         return [
-            'required' => ':attribute Required!',
             'string' => ':attribute Must be a string!',
         ];
     }
