@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Player::factory()->count(10)->create();
 
+        \App\Models\Setting::create(['cooldown_hour' => 24]);
+
     }
 }

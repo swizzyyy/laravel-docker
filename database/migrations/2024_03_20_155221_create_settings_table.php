@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->integer('wheel_spin_cooldown_hours');
+            $table->unsignedInteger('cooldown_hour')->default(24);
             $table->timestamps();
         });
     }

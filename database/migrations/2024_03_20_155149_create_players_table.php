@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->unsignedBigInteger('rank_id')->nullable();
             $table->foreign('rank_id')->references('id')->on('ranks');
+            $table->timestamp('last_spin_time')->nullable();
             $table->string('password');
             $table->decimal('balance', 10, 4)->default(0);
             $table->tinyInteger('is_blocked')->default(0);

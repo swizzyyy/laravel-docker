@@ -16,25 +16,16 @@ class AuthController extends Controller
 
         if (Auth::guard('admin')->attempt($credentials)) {
             $token = auth('admin')->attempt($credentials);
-            return $this->adminRespondWithToken($token);
+            return $this->respondWithToken($token);
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
     }
 
-    protected function adminRespondWithToken($token)
-    {
-        return response()->json([
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => config('jwt.ttl') * 60
-        ]);
-    }
-
     public function playerLogin(Request $request)
     {
         /**
-        *  Chaning driver to authorize player
+        *  Chaning driver to use player model
         */
             Auth::setDefaultDriver('player');
 
@@ -42,13 +33,13 @@ class AuthController extends Controller
 
             if (Auth::guard('player')->attempt($credentials)) {
                 $token = auth('player')->attempt($credentials);
-                return $this->playerRespondWithToken($token);
+                return $this->respondWithToken($token);
             }
 
             return response()->json(['error' => 'Unauthorized'], 401);
     }
 
-    protected function playerRespondWithToken($token)
+    protected function respondWithToken($token)
     {
         return response()->json([
             'access_token' => $token,

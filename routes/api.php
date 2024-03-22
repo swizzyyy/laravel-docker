@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\RankController;
 use App\Http\Controllers\Api\V1\PlayerController;
 use App\Http\Controllers\Api\V1\RankCategoryController;
+use App\Http\Controllers\Api\V1\SpinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/players',[PlayerController::class,'index']);
     Route::post('/assignPrize',[AssignPrizeController::class,'assignPrize']);
 });
+
+Route::post('/spin',[SpinController::class,'spin'])->middleware('auth:player');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
