@@ -5,12 +5,14 @@
 
 <h3>We have 2 authentications one for admin and other one for player</h3>
 
-<h3>Admin Auth endpoint:</h3>
+<h3>Admin Auth Endpoint:</h3>
 <h4>/api/auth/token/admin ("Post Method") email:admin@example.com pass:qwer1234</h4>
-<h3>Player endpoint:</h3>
+<h3>Player Auth Endpoint:</h3>
 <h4>/api/auth/token/player P.s password is "password" and an email you can take from /api/players but You must be authorized as an administrator</h4>
 
 <h3>Endpoints for admin</h3>
+
+
 <h4>Prizes</h4>
     <ul>
 <li>/api/prize - GET Method returns all Prizes (Cached in Redis)</li>
