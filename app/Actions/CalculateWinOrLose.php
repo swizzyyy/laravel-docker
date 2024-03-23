@@ -17,7 +17,7 @@ class CalculateWinOrLose
             if (!empty($playersRank)) {
                 $rankGroupID = $playersRank[0]->rank_category_id;
             } else {
-                $rankGroupID = null;
+                return response()->json(['Rank group is not defined']);
             }
 
             $assignPrizeCollection = AssignPrize::where('rank_category_id',$rankGroupID)->first();
