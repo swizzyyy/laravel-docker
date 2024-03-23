@@ -49,5 +49,5 @@
 <ul>
     <li>/api/spin - GET Method</li>
 </ul>
-
+<hr>
 <h2>If an unexpected error occurs please try to reboot container</h2>
