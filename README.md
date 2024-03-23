@@ -50,4 +50,4 @@
     <li>/api/spin - GET Method</li>
 </ul>
 
-<2>If an unexpected error occurs please try to reboot container</2>
+<2>If an unexpected error occurs please try to reboot container</h2>
