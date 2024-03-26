@@ -14,12 +14,13 @@ fi
 
 role=${CONTAINER_ROLE:-app}
 
-if [ ! $JWT_SECRET ]; then
-    php artisan jwt:secret
-fi
 
 if [ ! $APP_KEY ]; then
     php artisan key:generate
+fi
+
+if [ ! $JWT_SECRET ]; then
+    php artisan jwt:secret
 fi
 
 if [ "$role" = "app" ]; then

@@ -18,13 +18,8 @@ class Player extends Authenticatable implements JWTSubject
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'first_name',
-        'last_name',
-        'email',
-        'last_spin_time',
-        'rank_id',
-        'password',
+    protected $guarded = [
+        'id'
     ];
 
     /**

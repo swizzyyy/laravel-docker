@@ -22,7 +22,21 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Rank::factory()->count(12)->create();
 
-        \App\Models\Player::factory()->count(10)->create();
+        \App\Models\Player::create([
+            'username' => 'test1',
+            'first_name' => 'test',
+            'last_name' => 'person',
+            'gender' =>'male',
+            'lang' => 'en',
+            'email' => 'testPlayer@gmail.com',
+            'rank_id' => 3,
+            'password' => bcrypt('password'),
+            'last_spin_time' => null,
+            'balance' => '0.0000',
+            'is_blocked' => '0',
+        ]);
+
+        \App\Models\Player::factory()->count(9)->create();
 
         \App\Models\Setting::create(['cooldown_hour' => 24]);
 

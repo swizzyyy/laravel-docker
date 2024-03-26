@@ -11,7 +11,7 @@ class getDataFromRedisAction
         $data = Redis::get($key);
 
         if ($data === null) {
-            $data = DB::table($table)->get();
+            $data = DB::table($table)->get()->toArray();
 
             Redis::set($key, json_encode($data));
         } else {
